@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+  <!--属性配置文件-->
+  <properties resource="jdbc.properties"/>
+
+  <!--开启日志-->
+  <settings>
+    <setting name="logImpl" value="STDOUT_LOGGING"/>
+  </settings>
+
+  <!--别名-->
+  <typeAliases>
+  	<package name="com.chen.crm.settings.domain"/>
+    <package name="com.chen.crm.workbench.domain"/>
+  </typeAliases>
+
+  <!--数据源-->
+  <environments default="development">
+    <environment id="development">
+      <transactionManager type="JDBC"/>
+      <dataSource type="POOLED">
+        <property name="driver" value="${jdbc.driver}"/>
+        <property name="url" value="${jdbc.url}"/>
+        <property name="username" value="${jdbc.user}"/>
+        <property name="password" value="${jdbc.password}"/>
+      </dataSource>
+    </environment>
+  </environments>
+
+  <!--mapper文件-->
+  <mappers>
+      <package name="com.chen.crm.settings.dao"/>
+      <package name="com.chen.crm.workbench.dao"/>
+  </mappers>
+</configuration>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
